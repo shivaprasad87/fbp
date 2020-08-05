@@ -806,7 +806,7 @@ if(($logos = $this->properties_model->getWhere(array('property_id' => $property-
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Property Name",
+  "name": "<?=$property->title?>",
   "url": "<?=current_url();?>",
   "logo": "<?=$logo_url?>",
   "contactPoint": {
