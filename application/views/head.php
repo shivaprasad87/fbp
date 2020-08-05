@@ -119,7 +119,32 @@
   <img src='https://trc.taboola.com/1302409/log/3/unip?en=page_view'
       width='0' height='0' style='display:none'/>
 </noscript>
-<!-- End of Taboola Pixel Code -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Full Basket Property",
+  "url": "<?=current_url();?>",
+  "logo": "<?=base_url('assets/img/logo.png')?>",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "9019000400",
+    "contactType": "customer service",
+    "contactOption": "TollFree",
+    "areaServed": "IN",
+    "availableLanguage": ["en","Hindi"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/fullbasketpropertypage/",
+    "https://twitter.com/fbptweets",
+    "https://www.instagram.com/full_basket_property1/",
+    "https://www.youtube.com/channel/UCGr-on8k7dRMKBFW-X2G05A",
+    "https://www.linkedin.com/company/full-basket-property-services-pvt-ltd/",
+    "https://in.pinterest.com/FullBasketPropertyOfficial/",
+    "https://www.fullbasketproperty.com/"
+  ]
+}
+</script>
     </head>
     <body class="abcd">
         <!-- Google Tag Manager (noscript) -->
