@@ -824,7 +824,7 @@ if(($logos = $this->properties_model->getWhere(array('property_id' => $property-
     "https://www.youtube.com/channel/UCGr-on8k7dRMKBFW-X2G05A",
     "https://www.linkedin.com/company/full-basket-property-services-pvt-ltd/",
     "https://in.pinterest.com/FullBasketPropertyOfficial/",
-    "http://www.fullbasketproperty.com/"
+    "https://www.fullbasketproperty.com/"
   ]
 }
 </script>
