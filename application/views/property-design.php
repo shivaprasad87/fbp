@@ -828,7 +828,19 @@ if(($logos = $this->properties_model->getWhere(array('property_id' => $property-
   ]
 }
 </script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "<?=$property->title?>",
+  "url": "<?=current_url();?>",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "<?=current_url();?>#showPattern{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 
 
 </head>

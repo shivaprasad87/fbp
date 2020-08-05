@@ -145,6 +145,20 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "Full Basket Property",
+  "url": "<?=current_url();?>",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "<?=current_url();?>#showPattern{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
     </head>
     <body class="abcd">
         <!-- Google Tag Manager (noscript) -->
