@@ -786,7 +786,49 @@
       "mainEntity": [<?=rtrim($txt,',')?>]
     }
 </script>
-<?php } ?>
+<?php } 
+$logo_url ='';
+if(($logos = $this->properties_model->getWhere(array('property_id' => $property->id),'property_logo')) != null)
+{
+    $logos=json_decode( json_encode($logos), true);
+    $logo_url = base_url().'uploads/'.$property->slug.'/logos/'.$map[0];
+}
+ else
+{
+    //print_r($property);
+    $map[0]= $property->builder_image;
+    $logo_url = base_url().'uploads/builders/'.$map[0];
+}
+
+
+?>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Property Name",
+  "url": "<?=current_url();?>",
+  "logo": "<?=$logo_url?>",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "9019000400",
+    "contactType": "customer service",
+    "contactOption": "TollFree",
+    "areaServed": "IN",
+    "availableLanguage": ["en","Hindi"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/fullbasketpropertypage/",
+    "https://twitter.com/fbptweets",
+    "https://www.instagram.com/full_basket_property1/",
+    "https://www.youtube.com/channel/UCGr-on8k7dRMKBFW-X2G05A",
+    "https://www.linkedin.com/company/full-basket-property-services-pvt-ltd/",
+    "https://in.pinterest.com/FullBasketPropertyOfficial/",
+    "http://www.fullbasketproperty.com/"
+  ]
+}
+</script>
+
 
 
 </head>
@@ -852,16 +894,17 @@
                                     <li class="sp-menu-item"><a href="#section-id-1507611947" class="m-link">Contact</a>
                                     </li>
                                     <li class="sp-menu-item">
-                                        <?php
-                                                if(($logos = $this->properties_model->getWhere(array('property_id' => $property->id),
-                                                                                                'property_logo')) != null)
+                                        <img class="sp-default-logo" src="<?=$logo_url;?>" style="    margin-left: 113px;
+                                                margin-right: -83px; margin-top: 13px;" alt="<?=$property->title.' Logo'?>">
+                              <!--           <?php
+                                                if(($logos = $this->properties_model->getWhere(array('property_id' => $property->id),'property_logo')) != null)
                                                 {
 
                                                     $logos=json_decode( json_encode($logos), true);
                                                     //builder_image;
                                                     ?>
                                                      <img class="sp-default-logo" src="<?= base_url().'uploads/'.$property->slug.'/logos/'.$map[0] ?>" style="    margin-left: 113px;
-                                                margin-right: -83px; margin-top: 13px;" alt="<?=$project->builder.' '.$property->title.' Logo'?>">
+                                                margin-right: -83px; margin-top: 13px;" alt="<?=$property->title.' Logo'?>">
                                                                 <?php
 
                                                 }
@@ -872,12 +915,12 @@
                                                 ?>
 
                                                                     <img class="sp-default-logo" src="<?= base_url().'uploads/builders/'.$map[0] ?>" style="    margin-left: 113px;
-                                                margin-right: -83px; margin-top: 13px;" alt="<?=$property->builder.' '.$property->title.' Logo'?>">
+                                                margin-right: -83px; margin-top: 13px;" alt="<?=$property->title.' Logo'?>">
 
                                                                     <?php
                                                 }
 
-                                                ?>
+                                                ?> -->
                                     </li>
                                 </ul>
                                 

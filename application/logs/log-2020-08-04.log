@@ -249,3 +249,17 @@ ERROR - 2020-08-04 18:51:28 --> Unable to write cache file: F:\FBP\fullbasketpro
 ERROR - 2020-08-04 18:51:33 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
 ERROR - 2020-08-04 18:52:22 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
 ERROR - 2020-08-04 18:52:28 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:39:36 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:39:40 --> Severity: Warning --> Illegal string offset 'bhk' F:\FBP\fullbasketproperty.com\application\controllers\Home.php 118
+ERROR - 2020-08-04 21:39:40 --> Severity: Warning --> Illegal string offset 'bhk_range' F:\FBP\fullbasketproperty.com\application\controllers\Home.php 118
+ERROR - 2020-08-04 21:39:40 --> Severity: Warning --> Illegal string offset 'price' F:\FBP\fullbasketproperty.com\application\controllers\Home.php 119
+ERROR - 2020-08-04 21:39:40 --> Severity: Warning --> Illegal string offset 'price_range' F:\FBP\fullbasketproperty.com\application\controllers\Home.php 119
+ERROR - 2020-08-04 21:39:40 --> Severity: Warning --> Illegal string offset 'baths' F:\FBP\fullbasketproperty.com\application\controllers\Home.php 120
+ERROR - 2020-08-04 21:39:40 --> Severity: Warning --> Illegal string offset 'baths_range' F:\FBP\fullbasketproperty.com\application\controllers\Home.php 120
+ERROR - 2020-08-04 21:39:56 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:40:01 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:40:09 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:40:14 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:40:21 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:40:27 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-04 21:40:32 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
