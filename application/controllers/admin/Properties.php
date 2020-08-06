@@ -400,6 +400,7 @@ $property_id = $this->properties_model->insertRow($data, 'properties');
              $A = ($this->input->post('FA'));
              for ($i=0; $i < 5 ; $i++) {  
                  $data_FAQ = array('p_id' => $property_id,'question'=>$Q[$i] , 'answer' => $A[$i]);
+                 if(trim($Q[$i])!='')
                  $this->properties_model->insertRow($data_FAQ, 'property_faqs');
              }
 
@@ -737,7 +738,7 @@ if ($constructionImages) {
              $A = ($this->input->post('FA'));
              for ($i=0; $i < 5 ; $i++) {  
                  $data_FAQ = array('p_id' => $id,'question'=>$Q[$i] , 'answer' => $A[$i]);
-                 if($Q[$i]!='')
+                 if(trim($Q[$i])!='')
                  $this->properties_model->insertRow($data_FAQ, 'property_faqs');
              }
 $img = $this->properties_model->getWhere(array("property_id"=>$id),"property_desktop_banners");

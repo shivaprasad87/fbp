@@ -898,9 +898,7 @@ $youtube_data = get_youtube($property->walkthrough);
         "description": "<?= substr(strip_tags($property->meta_desc), 0, 1000) ?>",
         "offers": {
             "@type": "AggregateOffer",
-            "priceCurrency": "INR",
-            "lowPrice": 123,
-            "highPrice": 1234, 
+            "priceCurrency": "INR", 
             "seller": [ 
                 { "@type": "Organization", "name": "Full Basket Property" }
             ]
