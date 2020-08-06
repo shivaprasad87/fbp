@@ -157,13 +157,13 @@ class Properties extends Admin_Controller
                     //print_r($propType);die;
                     if($propType['name']=='Apartments')
                     {
-                      $propType['flat_name'] =" Flats";  
+                      $propType['flat_name'] ="Flats";  
                     }
                     else
                     {
                        $propType['flat_name'] =$propType['name'];  
                     }
-            $m_title = $this->input->post('title').' '. $location_name['name'].', '.$city_name['name'].' | '.$prop_flat_types.' '.$project_status.' '.$propType['flat_name'].' For Sale';
+            $m_title = trim($this->input->post('title')).' '. trim($location_name['name']).', '.trim($city_name['name']).' | '.trim($prop_flat_types).' '.trim($project_status).' '.trim($propType['flat_name']).' For Sale';
             
             }
             if($this->input->post('meta_desc')=='')
@@ -173,7 +173,7 @@ class Properties extends Admin_Controller
                 if($propType['name']=='Plots')
                     $f_p='';
 
-            $m_desc= $this->input->post('title').' '.$propType['name'].' in '. $location_name['name'].', '.$city_name['name'].'  '.$prop_flat_types.' '.' For Sale. Checkout Price, Brochure, Reviews, Master Plan'.$f_p.', Amenities and More.';
+            $m_desc= $this->input->post('title').' '.$propType['name'].' in '.trim($location_name['name']).', '.$city_name['name'].' '.trim($prop_flat_types).' '.'For Sale. Checkout Price, Brochure, Reviews, Master Plan'.trim($f_p).', Amenities and More.';
             }
             if($this->input->post('meta_keywords')=='')
             {
