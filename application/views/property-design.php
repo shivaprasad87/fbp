@@ -767,9 +767,9 @@
         </style>
         <?php 
         $txt = ''; 
-        if($property->faq[0]->question!='')
-        {
+  
         foreach ($property->faq as $faq) {
+            if(trim($faq->question)!=''){
             $txt .='{
         "@type": "Question",
         "name": "'.$faq->question.'",
@@ -777,8 +777,9 @@
           "@type": "Answer",
           "text": "'.$faq->answer.'"}
       },';
+  }
         }
-    }
+    
         if(trim($txt)!='')
         {
  ?>
@@ -897,7 +898,9 @@ $youtube_data = get_youtube($property->walkthrough);
         "description": "<?= substr(strip_tags($property->meta_desc), 0, 1000) ?>",
         "offers": {
             "@type": "AggregateOffer",
-            "priceCurrency": "INR", 
+            "priceCurrency": "INR",
+            "lowPrice": 123,
+            "highPrice": 1234, 
             "seller": [ 
                 { "@type": "Organization", "name": "Full Basket Property" }
             ]
