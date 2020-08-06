@@ -767,7 +767,7 @@
         </style>
         <?php 
         $txt = '';
-        if(count($property->faq))
+        if(count($property->faq)>0)
         {
         foreach ($property->faq as $faq) {
             $txt .='{
