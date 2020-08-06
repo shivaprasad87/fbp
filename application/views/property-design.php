@@ -841,7 +841,35 @@ if(($logos = $this->properties_model->getWhere(array('property_id' => $property-
   }
 }
 </script>
+<?php
+if($property->walkthrough)
+{
+    ?>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "<?=$property->title?>",
+  "description": "<?= substr(strip_tags($property->meta_desc), 0, 1000) ?>",
+  "thumbnailUrl": "https://img.youtube.com/vi/<?= getYoutubeVideoId($property->walkthrough) ?>/mqdefault.jpg",
+  "uploadDate": "<?=$property->date_added?>",  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Full Basket Property",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "<?=$logo_url?>",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "contentUrl": "<?=$property->walkthrough?>"
+}
+</script>
+<?php
+}
+?>
 
 </head>
 
