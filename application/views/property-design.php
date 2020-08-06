@@ -766,8 +766,8 @@
             /*---------------------------*/
         </style>
         <?php 
-        $txt = '';
-        if(count($property->faq)>0)
+        $txt = ''; 
+        if($property->faq[0]->question!='')
         {
         foreach ($property->faq as $faq) {
             $txt .='{
@@ -885,8 +885,31 @@ $youtube_data = get_youtube($property->walkthrough);
 </script>
 <?php
 }
-?>
 
+            $builder  = $this->bm->getBuilderById('name,description', ['id'=>$property->builder_id]);
+?>
+<script data-react-helmet="true" type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "<?=$property->title?>",
+        "image": "<?= base_url('uploads/'.$property->slug.'/'.$property->image) ?>",
+        "description": "<?= substr(strip_tags($property->meta_desc), 0, 1000) ?>",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "INR", 
+            "seller": [ 
+                { "@type": "Organization", "name": "Full Basket Property" }
+            ]
+        },
+        "brand": {
+            "@type": "Organization",
+            "name": "<?=$builder['name']?>",
+            "url": "<?=current_url();?>",
+            "description": "<?=$builder['description']?>"
+        }
+    }
+</script>
 </head>
 
 <body class="site com-sppagebuilder view-page no-layout no-task itemid-437 en-gb ltr  sticky-header layout-fluid">

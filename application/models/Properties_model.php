@@ -568,7 +568,9 @@ class Properties_model extends MY_Model
             else
             {
                 $bhk='yes';
-              $result1 .=trim($res->name," BHK")."/";  
+                $trim_name = trim($res->name," BHK");
+                if(strpos($res->name, '.')=='')
+              $result1 .= $trim_name."/";  
             }
             
         } 

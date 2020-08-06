@@ -165,7 +165,7 @@ class Properties extends Admin_Controller
                     }
             $m_title = trim($this->input->post('title')).' '. trim($location_name['name']).', '.trim($city_name['name']).' | '.trim($prop_flat_types).' '.trim($project_status).' '.trim($propType['flat_name']).' For Sale';
             
-            }
+            } 
             if($this->input->post('meta_desc')=='')
             {
                 
