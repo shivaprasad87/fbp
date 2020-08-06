@@ -864,6 +864,7 @@ $youtube_data = get_youtube($property->walkthrough);
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "name": "<?=$youtube_data['title']?>",  
+  "description": "<?= substr(strip_tags($property->meta_desc), 0, 1000) ?>",
   "thumbnailUrl": "https://img.youtube.com/vi/<?= getYoutubeVideoId($property->walkthrough) ?>/mqdefault.jpg",
   "uploadDate": "<?=$property->date_added?>",  
   "publisher": {
