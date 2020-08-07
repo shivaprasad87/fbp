@@ -1248,7 +1248,7 @@ if(min($price)!='' && max($price))
 
                                                         <?php if($side_image)
                                                         {
-                                                        echo '<img src="'.$side_image.'"style="margin: 0px auto; margin-bottom: 20px;" alt="'.$property->title.' '.$property->location.'"></a>'; } else echo '<img src="'.base_url('uploads/'.$property->slug.'/'.$property->image).'"alt="'.$property->title.' '.$property->location.' style="margin: 0px auto; margin-bottom: 20px;"></a>'; ?>
+                                                        echo '<img src="'.$side_image.'"style="margin: 0px auto; margin-bottom: 20px;" alt="'.$property->title.' '.$property->location.'"></a>'; } else {echo '<img src="'.base_url('uploads/'.$property->slug.'/'.$property->image).'"alt="'.$property->title.' '.$property->location.' style="margin: 0px auto; margin-bottom: 20px;"></a>';} ?>
 
                                                     </div>
                                                     <div class="col-md-8">
