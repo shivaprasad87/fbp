@@ -931,6 +931,14 @@ if(min($price)!='' && max($price))
 <?php
 }
 ?>
+<script data-react-helmet="true" type="application/ld+json">
+    { "@context": "http://schema.org/", 
+    "@type": "Residence",
+     "address": { "@type": "PostalAddress",
+      "addressLocality": "<?=$property->location?>",
+       "addressRegion": "<?=$property->city_name?>" } }
+</script>
+
 </head>
 
 <body class="site com-sppagebuilder view-page no-layout no-task itemid-437 en-gb ltr  sticky-header layout-fluid">
