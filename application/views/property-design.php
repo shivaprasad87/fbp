@@ -914,8 +914,8 @@ if(min($price)!='' && max($price))
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR", 
-            "lowPrice":"<?=number_format(min($price))?>",
-            "highPrice":"<?=number_format(max($price))?>",
+            "lowPrice":"<?=min($price)?>",
+            "highPrice":"<?=max($price)?>",
             "seller": [ 
                 { "@type": "Organization", "name": "Full Basket Property" }
             ]
