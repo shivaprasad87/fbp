@@ -1874,7 +1874,7 @@ if(min($price)!='' && max($price))
                                         <div class="col-md-4">
                                         <div class="container prop-img">
                                             <img src="<?= base_url("uploads/$project->slug/$project->image") ?>"  style="padding: 0; padding: 0px;"
-                                                 class="img-responsive" style="padding: 0; " alt="<?=$propType['name'].' in '.$project->city_name.' '.$project->location?>" 
+                                                 class="img-responsive" style="padding: 0; " alt="<?=$propType['name'].' in '.$project->city_name.' '.$project->location?>" >
                                           </div>       
 
                                             <div class="builder_proj">
