@@ -885,9 +885,24 @@ $youtube_data = get_youtube($property->walkthrough);
 }
 </script>
 <?php
-}
+} 
 
             $builder  = $this->bm->getBuilderById('name,description', ['id'=>$property->builder_id]);
+            $price_range ='';
+            $price = array();
+            if (($flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id)) != null){
+                $i=0;
+            foreach ($flatTypes as $flatType) {
+                ?>
+             <?php if($flatType->price_on_request){ $price_range =''; }else{ $price_range ='no';
+             $price[$i++] =  ( ($row = $this->properties_model->getPropertyParam(array('property_id' => $property->id, 'flat_type_id' => $flatType->flat_type_id), 'property_flat_types', null, 'MIN(total) as amount')) != null ) ? ($row->amount) : 0; } 
+            }
+        } 
+        // echo min($price);
+        // echo max($price); 
+if(min($price)!='' && max($price))
+{
+
 ?>
 <script data-react-helmet="true" type="application/ld+json">
     {
@@ -899,6 +914,8 @@ $youtube_data = get_youtube($property->walkthrough);
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "INR", 
+            "lowPrice":"<?=number_format(min($price))?>",
+            "highPrice":"<?=number_format(max($price))?>",
             "seller": [ 
                 { "@type": "Organization", "name": "Full Basket Property" }
             ]
@@ -911,6 +928,9 @@ $youtube_data = get_youtube($property->walkthrough);
         }
     }
 </script>
+<?php
+}
+?>
 </head>
 
 <body class="site com-sppagebuilder view-page no-layout no-task itemid-437 en-gb ltr  sticky-header layout-fluid">
