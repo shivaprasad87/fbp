@@ -162,7 +162,7 @@
     {
         "@context": "https:\/\/schema.org",
         "@type": "RealEstateAgent",
-        "name": "Full Basket Property",
+        "name": "Full Basket Property Pvt Ltd.",
         "image": ["<?=base_url('assets/img/logo.png');?>"],
         "telephone": "9019000400",
         "url": "<?=base_url();?>",
