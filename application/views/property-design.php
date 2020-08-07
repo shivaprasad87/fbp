@@ -938,7 +938,32 @@ if(min($price)!='' && max($price))
       "addressLocality": "<?=$property->location?>",
        "addressRegion": "<?=$property->city_name?>" } }
 </script>
-
+<script type="application/ld+json">
+    {
+        "@context": "https:\/\/schema.org",
+        "@type": "RealEstateAgent",
+        "name": "<?=$property->title?>",
+        "image": ["<?= base_url('uploads/'.$property->slug.'/'.$property->image) ?>"],
+        "telephone": "9019000400",
+        "url": "<?=base_url();?>",
+        "address": { "@type": "PostalAddress","addressLocality": "<?=$property->location?>","addressRegion": "<?=$property->city_name?>", "addressCountry": "IN" },
+        "priceRange": "<?=min($price)?>",
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "18:30" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "10:00", "closes": "18:00" }
+        ],
+        "ContactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": "+91-9019-000-400",
+            "url": "<?=base_url('contact');?>",
+            "email": "sales@fullbasketproperty.com",
+            "areaServed": "IN",
+            "contactOption": ["9019000400", "TollFree"],
+            "availableLanguage": "English"
+        }
+    }
+</script>
 </head>
 
 <body class="site com-sppagebuilder view-page no-layout no-task itemid-437 en-gb ltr  sticky-header layout-fluid">

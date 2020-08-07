@@ -98,3 +98,19 @@ ERROR - 2020-08-07 12:02:17 --> Unable to write cache file: F:\FBP\fullbasketpro
 ERROR - 2020-08-07 12:02:29 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
 ERROR - 2020-08-07 12:15:03 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
 ERROR - 2020-08-07 12:15:14 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 14:13:26 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it.
+ F:\FBP\fullbasketproperty.com\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2020-08-07 14:13:26 --> Unable to connect to the database
+ERROR - 2020-08-07 14:13:31 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it.
+ F:\FBP\fullbasketproperty.com\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2020-08-07 14:13:31 --> Unable to connect to the database
+ERROR - 2020-08-07 17:56:18 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 17:56:35 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 17:56:45 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 17:56:53 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 17:57:02 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 17:57:09 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 17:57:17 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 18:01:52 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 18:03:48 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-07 18:04:24 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
