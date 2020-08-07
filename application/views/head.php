@@ -158,6 +158,31 @@
   }
 }
 </script>
+<script type="application/ld+json">
+    {
+        "@context": "https:\/\/schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Full Basket Property",
+        "image": ["<?=base_url('assets/img/logo.png');?>"],
+        "telephone": "9019000400",
+        "url": "<?=base_url();?>",
+        "address": { "@type": "PostalAddress", "streetAddress": "Sigma TridentNo - 11/2/1 , Hayes Road , Bengaluru Karnataka  560025", "addressLocality": "Richmond Circle", "postalCode": "560025", "addressRegion": "Bangalore", "addressCountry": "IN" },  
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "18:30" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "10:00", "closes": "18:00" }
+        ],
+        "ContactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": "+91-901-900-0400",
+            "url": "<?=base_url('contact')?>",
+            "email": "sales@fullbasketproperty.com",
+            "areaServed": "IN",
+            "contactOption": ["", "TollFree"],
+            "availableLanguage": "English"
+        }
+    }
+</script>
 
     </head>
     <body class="abcd">
