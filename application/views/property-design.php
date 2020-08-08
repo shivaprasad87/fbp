@@ -969,6 +969,32 @@ if(min($price)!='' && max($price))
         }
     }
 </script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "<?=base_url();?>"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "<?=$property->city_name;?>",
+        "item": "<?=current_url();?>"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "<?=$property->location?>",
+        "item": "<?=current_url();?>"
+      },{
+        "@type": "ListItem",
+        "position": 4,
+        "name": "<?=$property->title?>", 
+      }]
+    }
+    </script>
 </head>
 
 <body class="site com-sppagebuilder view-page no-layout no-task itemid-437 en-gb ltr  sticky-header layout-fluid">
