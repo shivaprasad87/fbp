@@ -991,7 +991,7 @@ if(min($price)!='' && max($price))
       },{
         "@type": "ListItem",
         "position": 4,
-        "name": "<?=$property->title?>", 
+        "name": "<?=$property->title?>"
       }]
     }
     </script>
