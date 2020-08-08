@@ -1,4 +1,9 @@
+<?php
+// if(preg_match('/[A-Z]/', current_url())){
+// redirect(strtolower(current_url()));
+// }
 
+?>
 <!DOCTYPE html>
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
 

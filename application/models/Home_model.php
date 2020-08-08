@@ -351,10 +351,19 @@ class Home_model extends MY_Model {
             }
 
     }
-        public function get_city_id($name = null)
+        public function get_city_id($name)
     {
         $data = $this->db->select('id')
         ->from('cities')
+        ->where('name',$name)
+        ->get()
+        ->result();
+        return  json_decode(json_encode($data[0]->id),true);
+    }
+        public function get_location_id($name = null)
+    {
+        $data = $this->db->select('id')
+        ->from('locations')
         ->where('name',$name)
         ->get()
         ->result();

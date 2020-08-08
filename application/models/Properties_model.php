@@ -554,16 +554,22 @@ class Properties_model extends MY_Model
     }
     public function get_flat_type_by_id($id)
     {
-        $query ="SELECT `name` FROM `flat_types` WHERE id in ($id)";
+        $query ="SELECT `name`,id FROM `flat_types` WHERE id in ($id)";
         $query=$this->db->query($query);
         $result = $query->result();
         //print_r($result);
         $result1 = '';
         $result2 = '';
+        //print_r($result);
         foreach ($result as $res) {
-            if($res->id==5 || $res->id ==13)
+            if($res->id==5 || $res->id ==13 || $res->id ==11)
             {
+                if($res->id ==11)
+                    $result2.='';
+                    else
                 $result2 .= $res->name;
+
+            
             }
             else
             {
@@ -575,7 +581,10 @@ class Properties_model extends MY_Model
             
         } 
             $result1 =rtrim($result1, "/");
-            $result1 .=' BHK';
+            if($bhk=='yes')
+            {
+            $result1 .=' BHK'; 
+            }
   
         return $result1." ".$result2;
 

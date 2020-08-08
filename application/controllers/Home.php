@@ -951,9 +951,19 @@ redirect(base_url());
     {
         
         if (is_null($slug) || ($property = $this->home_model->getProperty($slug)) == null) {
-            //show_404();
 redirect(base_url());
         } 
+        if($city !='' || $location !='')
+        { 
+         $city_id = $this->home_model->get_city_id($city);    
+         if(($city_id!=$property->city_id) || ($location!=$property->area))
+         {
+            redirect(base_url());
+        }
+        }
+        
+        
+
         if ($this->input->post()) {
             $this->load->model('Builders_model', 'bm');
             $builder  = $this->bm->getBuilderById('name', ['id'=>$property->builder_id]);     
