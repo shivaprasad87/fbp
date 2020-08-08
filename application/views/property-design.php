@@ -961,7 +961,7 @@ if(min($price)!='' && max($price))
             "@type": "ContactPoint",
             "contactType": "sales",
             "telephone": "+91-9019-000-400",
-            "url": "<?=base_url('contact');?>",
+            "url": "<?=current_url();?>",
             "email": "sales@fullbasketproperty.com",
             "areaServed": "IN",
             "contactOption": ["9019000400", "TollFree"],
