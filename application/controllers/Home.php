@@ -957,9 +957,8 @@ redirect(base_url());
         { 
          $city_id = $this->home_model->get_city_id($city);   
          $location = str_replace('-',' ',$location); 
-         if(($city_id!=$property->city_id) || ($location!=strtolower($property->area)))
+         if(($city_id!=$property->city_id))
          {
-            //echo "$city_id"." ".$property->city_id." & ".$location." & ".$property->area;die;
             redirect(base_url());
         }
         }
