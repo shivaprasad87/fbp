@@ -823,7 +823,7 @@
         "name": "What are the amenities provided by '.$property->title. '?"'.'  ,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "'.$property->title.' provides amenities like gym, swimming pool, club house, children play area etc,."}
+          "text": "'.$property->title.' provides amenities like <b>gym, swimming pool, club house, children play area etc.</b>"}
       },';
   
         foreach ($property->faq as $faq) {
