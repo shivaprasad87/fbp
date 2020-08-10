@@ -771,7 +771,60 @@
             /*---------------------------*/
         </style>
         <?php 
+            $builder  = $this->bm->getBuilderById('name,description', ['id'=>$property->builder_id]);
+            $price_range ='';
+            $price = array();
+            if (($flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id)) != null){
+                $i=0;
+            foreach ($flatTypes as $flatType) {
+                ?>
+             <?php if($flatType->price_on_request){ $price_range =''; }else{ $price_range ='no';
+             $price[$i++] =  ( ($row = $this->properties_model->getPropertyParam(array('property_id' => $property->id, 'flat_type_id' => $flatType->flat_type_id), 'property_flat_types', null, 'MIN(total) as amount')) != null ) ? ($row->amount) : 0; } 
+            }
+        } 
         $txt = ''; 
+        $txt .='{
+        "@type": "Question",
+        "name": "What is the price for '.$property->title." ".$property->city_name. '?"'.'  ,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "'.$property->title." starts from Rs.".number_format(min($price)). '"'.'}
+      },';
+  $txt .='{
+        "@type": "Question",
+        "name": "What is the location of '.$property->title. '?"'.' ,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "'.$property->title." is located at ".$property->location.", ".$property->city_name. '"'.'}
+      },';
+      $p_status='';
+      $ans='';
+      if($property->issue_date =='Ready To Move' || $property->issue_date =='Resale')
+      {
+       $p_status ="Ready To Move In"; 
+       $ans = "<b>".$property->title."</b> is now <b>".$p_status."</b>".'"';
+      }
+        
+    else
+    {
+        $p_status = "Under Construction";
+        $ans = "<b>".$property->title."</b> is now in <b>".$p_status."</b>".'"';
+    }
+
+        $txt .='{
+        "@type": "Question",
+        "name": "What is '.$property->title. " current status". '?"'.'  ,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "'.$ans.'}
+      },';
+      $txt .='{
+        "@type": "Question",
+        "name": "What are the amenities provided by '.$property->title. '?"'.'  ,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "'.$property->title.' provides amenities like gym, swimming pool, club house, children play area etc,."}
+      },';
   
         foreach ($property->faq as $faq) {
             if(trim($faq->question)!=''){
@@ -780,7 +833,7 @@
         "name": "'.$faq->question.'",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "'.$faq->answer.'"}
+          "text": "'.$faq->answer.'"}<project name> starts from <lower price> onwards
       },';
   }
         }
@@ -892,17 +945,7 @@ $youtube_data = get_youtube($property->walkthrough);
 <?php
 } 
 
-            $builder  = $this->bm->getBuilderById('name,description', ['id'=>$property->builder_id]);
-            $price_range ='';
-            $price = array();
-            if (($flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id)) != null){
-                $i=0;
-            foreach ($flatTypes as $flatType) {
-                ?>
-             <?php if($flatType->price_on_request){ $price_range =''; }else{ $price_range ='no';
-             $price[$i++] =  ( ($row = $this->properties_model->getPropertyParam(array('property_id' => $property->id, 'flat_type_id' => $flatType->flat_type_id), 'property_flat_types', null, 'MIN(total) as amount')) != null ) ? ($row->amount) : 0; } 
-            }
-        } 
+
         // echo min($price);
         // echo max($price); 
 if(min($price)!='' && max($price))
