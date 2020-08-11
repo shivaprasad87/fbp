@@ -291,7 +291,7 @@
                             </div>
 <div class="form-group col-md-12" >
         <div class="input-group" style="margin-top: 20px;">
-            <div class="input-group-addon"><b class="" aria-hidden="true">city</b></div>
+            <div class="input-group-addon"><e class="" aria-hidden="true">city</e></div>
             <select class="form-control" name="city_name">
                 <option>---Select City---</option>
                 <?php
@@ -306,7 +306,7 @@
     </div>
 <div class="form-group col-md-12" >
         <div class="input-group">
-            <div class="input-group-addon"><b class="" aria-hidden="true">Purpose</b></div>
+            <div class="input-group-addon"><e class="" aria-hidden="true">Purpose</e></div>
             <select class="form-control" name="purpose">
                 <option value="">---Select Purpose---</option>
                 <option value="Buying">Buying</option>
