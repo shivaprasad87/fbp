@@ -291,7 +291,7 @@
                             </div>
 <div class="form-group col-md-12" >
         <div class="input-group" style="margin-top: 20px;">
-            <div class="input-group-addon"><e class="" aria-hidden="true">city</e></div>
+            <div class="input-group-addon"><e class="" aria-hidden="true">City</e></div>
             <select class="form-control" name="city_name">
                 <option>---Select City---</option>
                 <?php
