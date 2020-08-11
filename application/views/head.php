@@ -9,37 +9,17 @@
         <meta name="keywords" content="<?= $keywords ?>">
         <meta name="description" content="<?= $description ?>">
         <meta name="image" content="<?= isset($image) ? $image : "" ?>">
-        <!-- Open Graph data -->
-      <!--   <meta prefix="og: https://ogp.me/ns#"  property="og:title" content="<?=$title?>" />
-        <meta prefix="og: https://ogp.me/ns#"  property="og:type" content="article" />
-        <meta prefix="og: https://ogp.me/ns#"  property="og:url" content="<?=current_url()?>" />
-        <meta prefix="og: https://ogp.me/ns#"  property="og:image" content="<?=isset($image) ? $image : ""?>" /> 
-        <meta prefix="og: https://ogp.me/ns#"  property="og:image" content="https://www.fullbasketproperty.com/assets/img/logo.png" />
-        <meta prefix="og: https://ogp.me/ns#"  property="og:description" content="<?= $description ?>" />
-        <meta prefix="og: https://ogp.me/ns#"  property="og:site_name" content="FullBasket Property" />
-        <meta prefix="og: https://ogp.me/ns#"  property="article:published_time" content="2017-05-11T12:46:52Z" />
-        <meta prefix="og: https://ogp.me/ns#"  property="article:modified_time" content="2017-05-11T12:46:52Z" />
-        <meta prefix="og: https://ogp.me/ns#"  property="article:section" content="Real Estate" /> -->
         <meta property="og:title" content="<?= strip_tags($title) ?>">
         <meta property="og:url" content="<?= current_url() ?>">
         <meta property="og:description" content="<?= $description ?>">
         <meta property="og:type" content="website">
-
-        <meta property="og:image" content="<?= isset($image) ? $image : base_url('assets/img/logo.png'); ?>">
-
-        <!-- Twitter Card data -->
+        <meta property="og:image" content="<?= base_url('assets/img/logo.png'); ?>">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@FBPTweets">
         <meta name="twitter:title" content="<?= $title ?>">
-        <meta name="twitter:description" content="<?= $description ?>">
-       <!--  <meta name="twitter:creator" content="@way2vineeth"> -->
-        <!-- <meta name="twitter:image:src" content="<?= isset($image) ? $image : "" ?>"> -->
-        <!-- <meta name="twitter:image:src" content="https://twitter.com/FBPTweets"> -->
-
-        
+        <meta name="twitter:description" content="<?= $description ?>">      
         <meta name="google-site-verification" content="HcMoEpoLRr3V3ma7TFsqXaEmzHBt5TGNVUZgYC_XJVE" />
-
-        <link rel="author" href="FullBasket Property">
+        <link rel="author" href="Full Basket Property">
         <link rel="publisher" href="">
         <link rel="icon" href="<?= base_url('assets/img/favicon.ico') ?>" type="image/gif" sizes="16x16">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
