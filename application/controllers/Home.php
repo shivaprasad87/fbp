@@ -706,7 +706,7 @@ redirect(base_url());
                 'image' => base_url('uploads/blog_images/' . $blog->image),
             );
             $this->data['view_page'] = 'blog';
-            $this->load->view('template', $this->data);
+            $this->load->view('blog_template', $this->data);
         }
         elseif ($blog_type){
            $this->data['meta'] = array(
