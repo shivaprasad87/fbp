@@ -14,6 +14,8 @@
         <meta property="og:description" content="<?= $description ?>">
         <meta property="og:type" content="website">
         <meta property="og:image" content="<?= base_url('assets/img/logo.png'); ?>">
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@FBPTweets">
         <meta name="twitter:title" content="<?= $title ?>">
