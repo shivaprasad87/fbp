@@ -289,10 +289,6 @@
                                 <input type="hidden" name="countrycode" id="cplusm" value=""> 
 
                             </div>
-    <?php 
-    if($this->uri->segment(1)!='careers')
-    {
-?>
 <div class="form-group col-md-12" >
         <div class="input-group" style="margin-top: 20px;">
             <div class="input-group-addon"><i class="" aria-hidden="true">city</i></div>
@@ -316,7 +312,7 @@
                 <option value="Buying">Buying</option>
                 <option value="Selling">Selling</option>
                 <option value="Home Loan">Home Loan</option>
-                <option value="Interior">Interior</option>
+                <option value="Interior Design">Interior Design</option>
                 <option value="Job Posting">Job Posting</option>
                 <option value="others">Others</option>
 
@@ -324,9 +320,6 @@
         </div>
         <label for="fname" generated="true" class="error"></label>
     </div>
-
-    <?php
-    }?>
                             <center>
                             <button type="submit"
                                     class="btn btn-default form-btn">Submit

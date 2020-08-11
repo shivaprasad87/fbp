@@ -1071,22 +1071,18 @@ redirect(base_url());
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->subject($this->input->post('name') . ' has Requested callback ' );
+            
             $c_code =$this->input->post('countrycode') ? $this->input->post('countrycode') :'+91';
-            if($this->input->post('city_name')=='')
+            if($this->input->post('purpose')=='Job Posting')
             {
             $this->email->to('hr@fullbasketproperty.com.test-google-a.com');
-            $data = array(
-                'post' =>
-                    array(
-                        'Name' => $this->input->post('name'), 
-                        'phone' => $c_code." - ".$this->input->post('phone') 
-                    )
-            );
-        }
-        else
-        {
+            $this->email->subject($this->input->post('name') . ' has Requested for job ' );
+            }
+            else
+            {
             $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->subject($this->input->post('name') . ' has Requested for property '.$this->input->post('purpose') );
+            }
             $data = array(
                 'post' =>
                     array(
@@ -1096,7 +1092,7 @@ redirect(base_url());
                         'Purpose' => $this->input->post('purpose')
                     )
             );
-        }
+        
 
             $this->email->message($this->load->view('mail_template.php', $data, true));
             if ($this->email->send()) {
