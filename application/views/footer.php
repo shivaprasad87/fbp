@@ -155,27 +155,30 @@
                    <form id="contact-form" action="" name="contact-form" method="POST" onsubmit="return save_landing_pageinfo('contact-form');">
                      
     <input type="hidden" name="property_id" value="<?= $property->id ?>">
-                                                                        <div class="form-group col-md-12" style="margin-top: 43px;">
-                                                                            <div class="input-group">
-                                                                                <div class="input-group-addon"><i
-                                                                                            class="fa fa-user form-ico"
-                                                                                            aria-hidden="true"></i></div>
-                                                                                <input type="text" class="form-control"
-                                                                                       name="name"
-                                                                                       placeholder="Your Name">
-                                                                            </div>
-                                                                            <label for="fname" generated="true"
-                                                                                   class="error"></label>
-                                                                        </div>
-                                                                       <div class="form-group col-md-12" style="margin-bottom:35px">
-                                                                       <div class="input-group">
-                                                                           <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                                                            <input type="tel" class="" placeholder=" " style="display: block;height: 37px;    width: 100%; font-size: 14px; line-height: 1.42857143; background-color: #fff; padding: 17px 48px; border: 1px solid #ccc; border-radius: 4px;" 
-                                                                                   name="phone" class="validate" id="contctform-phone3" required>
-                                                                                   <input type="hidden" name="countrycode" id="cplusm" value="">
-                                                                             </div>
+    <div class="form-group col-md-12" style="margin-top: 43px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user form-ico" aria-hidden="true"></i></div>
+            <input type="text" class="form-control" name="name" placeholder="Your Name" value="<?=$this->uri->segment(1)?>">
+        </div>
+        <label for="fname" generated="true" class="error"></label>
+    </div>
+   <div class="form-group col-md-12" style="margin-bottom:35px">
+   <div class="input-group">
+       <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+        <input type="tel" class="" placeholder=" " style="display: block;height: 37px;    width: 100%; font-size: 14px; line-height: 1.42857143; background-color: #fff; padding: 17px 48px; border: 1px solid #ccc; border-radius: 4px;" 
+               name="phone" class="validate" id="contctform-phone3" required>
+               <input type="hidden" name="countrycode" id="cplusm" value="">
+         </div>
 
-                                                                        </div>
+    </div>
+    <div class="form-group col-md-12" style="margin-top: 43px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user form-ico" aria-hidden="true"></i></div>
+            <input type="text" class="form-control" name="name" placeholder="Your Name" value="<?=$this->uri->segment(1)?>">
+        </div>
+        <label for="fname" generated="true" class="error"></label>
+    </div>
+
 
                                                                 
 
@@ -286,7 +289,44 @@
                                 <input type="hidden" name="countrycode" id="cplusm" value=""> 
 
                             </div>
+    <?php 
+    if($this->uri->segment(1)!='careers')
+    {
+?>
+<div class="form-group col-md-12" >
+        <div class="input-group" style="margin-top: 20px;">
+            <div class="input-group-addon"><i class="" aria-hidden="true">city</i></div>
+            <select class="form-control" name="city_name">
+                <option>---Select City---</option>
+                <?php
+                $cities = $this->properties_model->getWhere(array('status' => 1), 'cities');
+                foreach ($cities as $city) {
+                  echo "<option value=".$city->name.">".$city->name."</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <label for="fname" generated="true" class="error"></label>
+    </div>
+<div class="form-group col-md-12" >
+        <div class="input-group">
+            <div class="input-group-addon"><i class="" aria-hidden="true">Purpose</i></div>
+            <select class="form-control" name="purpose">
+                <option value="">---Select Purpose---</option>
+                <option value="Buying">Buying</option>
+                <option value="Selling">Selling</option>
+                <option value="Home Loan">Home Loan</option>
+                <option value="Interior">Interior</option>
+                <option value="Job Posting">Job Posting</option>
+                <option value="others">Others</option>
 
+            </select>
+        </div>
+        <label for="fname" generated="true" class="error"></label>
+    </div>
+
+    <?php
+    }?>
                             <center>
                             <button type="submit"
                                     class="btn btn-default form-btn">Submit

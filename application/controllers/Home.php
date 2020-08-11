@@ -195,8 +195,7 @@ class Home extends Public_Controller
         $phone = trim(stripslashes($_POST['phone']));
         $message = trim(stripslashes($_POST['message']));
 
-        $this->email->from($name, $email);
-//         $this->email->to('vineeth@soarmorrow.com');
+        $this->email->from($name, $email); 
         $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
 
         $this->email->subject('Enquiry for you');
@@ -1066,16 +1065,17 @@ redirect(base_url());
         $this->load->view('template', $this->data);
     }
   public function sendEmail( )
-  {
+  { 
     if ($this->input->post()) { 
            
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
-
             $this->email->subject($this->input->post('name') . ' has Requested callback ' );
             $c_code =$this->input->post('countrycode') ? $this->input->post('countrycode') :'+91';
+            if($this->input->post('city_name')=='')
+            {
+            $this->email->to('shiva@secondsdigital.com.test-google-a.com,shivas8787@gmail.com');
             $data = array(
                 'post' =>
                     array(
@@ -1083,6 +1083,21 @@ redirect(base_url());
                         'phone' => $c_code." - ".$this->input->post('phone') 
                     )
             );
+        }
+        else
+        {
+            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $data = array(
+                'post' =>
+                    array(
+                        'Name' => $this->input->post('name'), 
+                        'phone' => $c_code." - ".$this->input->post('phone'),
+                        'City' => $this->input->post('city_name'),
+                        'Purpose' => $this->input->post('purpose')
+                    )
+            );
+        }
+
             $this->email->message($this->load->view('mail_template.php', $data, true));
             if ($this->email->send()) {
                 $this->data['mail_sent'] = true;
