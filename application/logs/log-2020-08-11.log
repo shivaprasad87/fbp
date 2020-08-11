@@ -185,3 +185,6 @@ ERROR - 2020-08-11 19:45:25 --> Unable to write cache file: F:\FBP\fullbasketpro
 ERROR - 2020-08-11 19:45:39 --> Severity: Warning --> Invalid argument supplied for foreach() F:\FBP\fullbasketproperty.com\application\views\header.php 80
 ERROR - 2020-08-11 19:45:39 --> Severity: Warning --> Invalid argument supplied for foreach() F:\FBP\fullbasketproperty.com\application\views\header.php 145
 ERROR - 2020-08-11 19:45:49 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/
+ERROR - 2020-08-11 19:50:21 --> Severity: Warning --> Invalid argument supplied for foreach() F:\FBP\fullbasketproperty.com\application\views\header.php 80
+ERROR - 2020-08-11 19:50:21 --> Severity: Warning --> Invalid argument supplied for foreach() F:\FBP\fullbasketproperty.com\application\views\header.php 145
+ERROR - 2020-08-11 19:50:32 --> Unable to write cache file: F:\FBP\fullbasketproperty.com\application\cache/

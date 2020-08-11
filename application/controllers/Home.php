@@ -1075,7 +1075,7 @@ redirect(base_url());
             $c_code =$this->input->post('countrycode') ? $this->input->post('countrycode') :'+91';
             if($this->input->post('city_name')=='')
             {
-            $this->email->to('shiva@secondsdigital.com.test-google-a.com,shivas8787@gmail.com');
+            $this->email->to('hr@fullbasketproperty.com.test-google-a.com');
             $data = array(
                 'post' =>
                     array(
@@ -1101,6 +1101,10 @@ redirect(base_url());
             $this->email->message($this->load->view('mail_template.php', $data, true));
             if ($this->email->send()) {
                 $this->data['mail_sent'] = true;
+            }
+            else
+            {
+                $this->email->print_debugger();
             }
             redirect(base_url('thankyou?type=instant'));
         }
