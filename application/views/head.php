@@ -13,13 +13,14 @@
         <meta property="og:url" content="<?= current_url() ?>">
         <meta property="og:description" content="<?= $description ?>">
         <meta property="og:type" content="website">
-        <meta property="og:image" content="<?= base_url('assets/img/logo.png'); ?>">
+        <meta property="og:image" content="<?= base_url('assets/images/og_tag.png'); ?>">
         <meta property="og:image:width" content="1900px" />
         <meta property="og:image:height" content="800px" />
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@FBPTweets">
         <meta name="twitter:title" content="<?= $title ?>">
-        <meta name="twitter:description" content="<?= $description ?>">      
+        <meta name="twitter:description" content="<?= $description ?>">   
+        <meta name="twitter:image" content="<?=base_url();?>assets/images/og_tag_twitter.png">    
         <meta name="google-site-verification" content="HcMoEpoLRr3V3ma7TFsqXaEmzHBt5TGNVUZgYC_XJVE" />
         <link rel="author" href="Full Basket Property">
         <link rel="publisher" href="">
