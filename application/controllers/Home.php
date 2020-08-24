@@ -204,7 +204,7 @@ class Home extends Public_Controller
 
         if ($this->email->send()) {
             $this->session->set_flashdata('message', 'Your enquiry has been sent successfully');
-            redirect(base_url('thankyou?type=home'));
+            redirect(base_url('thankyou'));
             //redirect($this->input->post('redirect', site_url()));
         }
         debug($this->email->print_debugger());
@@ -598,10 +598,12 @@ redirect(base_url());
 
         if ($this->email->send()) {
             if ($this->input->is_ajax_request()) {
-                die(json_encode(array('status' => 'ok', 'url'=>base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title))));
+                // die(json_encode(array('status' => 'ok', 'url'=>base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title))));
+                die(json_encode(array('status' => 'ok', 'url'=>base_url('thankyou'))));
             } else {
                 $this->session->set_flashdata('message', 'Your enquiry has been sent successfully');
-                redirect(base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title));
+                // redirect(base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title));
+                redirect(base_url('thankyou'));
                 //redirect(site_url("property/$property->slug"));
             }
         }
@@ -771,6 +773,7 @@ redirect(base_url());
 
             if ($this->email->send()) {
                 $this->session->set_flashdata('message', 'Your enquiry has been sent successfully');
+                //redirect(base_url('thankyou?type=home'));
                 redirect(base_url('thankyou?type=home'));
                 //redirect(site_url("contact"));
             }
@@ -1007,7 +1010,8 @@ redirect(base_url());
             $city = $this->input->post('city');
             if($city=='Hyderabad')
                  $this->data['image']= "thankyou-images/3.jpg"; 
-            redirect(base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title.'&city='.$city));
+            // redirect(base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title.'&city='.$city));
+             redirect(strtolower(trim($city))."/thankyou");
         }
         $property->amenities = $this->properties_model->getAmenities($property->id);
         $property->gallery = $this->properties_model->getGallery($property->id);
@@ -1102,7 +1106,13 @@ redirect(base_url());
             {
                 $this->email->print_debugger();
             }
-            redirect(base_url('thankyou?type=instant'));
+            if($this->input->post('purpose')=='Job Posting')
+            redirect(base_url('careers/thankyou'));
+            if($this->input->post('purpose')=='others')
+            redirect(base_url('thankyou'));
+            else
+            redirect(base_url(strtolower(trim($this->input->post('city_name'))).'/thankyou'));
+            
         }
   }
   public function sendEmailCity( )
@@ -1134,7 +1144,8 @@ redirect(base_url());
             {
                 echo $this->email->print_debugger();die;
             }
-            redirect(base_url('thankyou?type=instant'));
+           //redirect(base_url('thankyou?type=instant'));
+            redirect(strtolower(trim($this->input->post('city_name1')))."/thankyou");
         }
   }
   public function achievements()

@@ -50,7 +50,7 @@ if (!defined('BASEPATH'))
         else
         {
             ?>
-             <div class="active item fadeInRight animated" style="background: url('thankyou-images/all.jpg');height: 268px;"></div>
+             <div class="active item fadeInRight animated" style="background: url(<?=base_url('thankyou-images/all.jpg');?>);height: 268px;"></div>
             <?php
         }
         }
