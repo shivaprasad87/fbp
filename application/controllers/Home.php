@@ -818,7 +818,7 @@ redirect(base_url());
                 $address = $this->input->post('address');
 
                 $this->email->from($name, $email);
-                $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+                $this->email->to('shivas8787@gmail.com');
 //                $this->email->to('vineeth@soarmorrow.com');
 
 
@@ -844,7 +844,8 @@ redirect(base_url());
                 }
                 if ($this->email->send()) {
                     $this->session->set_flashdata('message', 'Your enquiry has been sent successfully');
-                    redirect(site_url("careers#en-application"));
+                    //redirect(site_url("careers#en-application"));
+                    redirect('careers/thankyou');
                 }
                 debug($this->email->print_debugger());
             }
