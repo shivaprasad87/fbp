@@ -356,6 +356,7 @@ class Home_model extends MY_Model {
         $data = $this->db->select('id')
         ->from('cities')
         ->where('name',$name)
+        ->where('status',1)
         ->get()
         ->result();
         return  json_decode(json_encode($data[0]->id),true);
