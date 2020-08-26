@@ -818,7 +818,7 @@ redirect(base_url());
                 $address = $this->input->post('address');
 
                 $this->email->from($name, $email);
-                $this->email->to('shivas8787@gmail.com');
+                $this->email->to('hr@fullbasketproperty.com.test-google-a.com');
 //                $this->email->to('vineeth@soarmorrow.com');
 
 
