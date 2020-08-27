@@ -1327,7 +1327,18 @@ if(min($price)!='' && max($price))
                                                     </div>
                                                     <div class="col-md-8">
                                                         <p style="text-align: justify;" class="comment more">
-                                                            <?= $property->builder_description ?>
+                                                            <?php 
+                                                            if(!empty($property->description))
+                                                            {
+                                                                echo $property->description;
+                                                            }
+                                                            else
+                                                            {
+                                                                echo $property->builder_description;
+                                                            }
+
+
+                                                             ?>
 
                                                         </p>
 
@@ -1570,20 +1581,32 @@ if(min($price)!='' && max($price))
                                 </section>
 
                         <?php
+                        if (($specifications = $this->properties_model->getPropertySpecification($property->id)) != null) {
+                            //print_r($specifications);
+                            // die;
                         $items = $this->properties_model->getPropertySpecification($property->id,
                                                     $specifications->id) != null;
-                        if($item)
+                        if($items)
                         {
+                            $bool =false;
+                                         foreach ($specifications as $k => $specification) {
+                                                           
+                                                        if (($items = $this->properties_model->getPropertySpecification($property->id,
+                                                                $specification->id)) != null) {
+                                                            $bool =true;
+                                                        }
+                                                    }
+                                                    if($bool)
+                                                    {   
 
                             ?>
                            
                                 <section id="section-id-1507611930" class="sppb-section rooms-suits" style="background: #f3f3f3;">
-                                    <div class="sppb-row-container">
+                                    <div class="sppb-row-container"> 
                                         <div class="sppb-section-title sppb-text-center">
                                             <h2 class="sppb-title-heading myt1">Specifications</h2>
                                             <div class="underline">&nbsp;</div>
-                                        </div>
-
+                                        </div> 
                                         <div class="sppb-row spe-head">
                                             <div class="row">
                                                 <div class="panel-group cust-accordion" id="accordion" role="tablist" aria-multiselectable="true">
@@ -1700,7 +1723,8 @@ if(min($price)!='' && max($price))
  <?php
                         }
 
-
+}
+}
                         ?>
                                 <section id="section-id-1507611991" class="sppb-section i-section resort-discount wow">
                                     <div class="overlay" style="padding-bottom: 50px;">
@@ -2220,6 +2244,33 @@ if($property->usp!='')
     </div>
     </div>
     </section>
+    <section id="section-id-1507611960" class="sppb-section   resort-discount wow">
+                                    <div class="overlay">
+                                        <div class="sppb-row-container">
+                                            <div class="sppb-row">
+                                                <div class="sppb-col-sm-12">
+                                                    <div class="sppb-section-title sppb-text-center">
+                                                        <h2 class="sppb-title-heading myt delay-10s animated wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                                                            About The Builder - <font style="color: #53ABBD"><?=$property->builder?></font></h2>
+                                                            <br>
+                                                        <div class="underline2" style="margin-bottom: 5px;">&nbsp;</div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="col-md-12"> 
+                                                                <p style="text-align: justify;" class="comment more">
+                                                                    <br>
+                                                                <?php
+                                                                echo str_replace($property->builder,"<b>".$property->builder."</b>",$property->builder_description);?>
+                                                            </p>
+                                                    <br/>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
     <?php $this->load->view('footer');?>
 
         <div class="offcanvas-menu wow">
@@ -2645,7 +2696,7 @@ if($property->usp!='')
 
         <script>
             $(document).ready(function() {
-                var showChar = 2000;
+                var showChar = 1000;
                 var ellipsestext = "...";
                 var moretext = "more";
                 var lesstext = "less";
