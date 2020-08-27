@@ -2066,6 +2066,7 @@ if(min($price)!='' && max($price))
     </div>
 
     </section>
+
 <?php
 if($property->usp!='')
 {
@@ -2108,6 +2109,35 @@ if($property->usp!='')
 <script src="https://emicalculator.net/widget/2.0/js/emicalc-loader.min.js" type="text/javascript"></script>
 <div id="ecww-widgetwrapper" style="min-width:250px;width:100%;">
     <div id="ecww-widget" style="position:relative;padding-top:0;padding-bottom:280px;height:0;overflow:hidden;"></div><!-- <div id="ecww-more" style="background:#333;font:normal 13px/1 Helvetica, Arial, Verdana, Sans-serif;padding:10px 0;color:#FFF;text-align:center;width:100%;clear:both;margin:0;clear:both;float:left;"><a style="background:#333;color:#FFF;text-decoration:none;border-bottom:1px dotted #ccc;" href="https://emicalculator.net/" title="Loan EMI Calculator" rel="nofollow" target="_blank">emicalculator.net</a></div> --></div><!-- EMI Calculator Widget END -->
+
+            <section id="section-id-1507611960" class="sppb-section   resort-discount wow">
+                                    <div class="overlay">
+                                        <div class="sppb-row-container">
+                                            <div class="sppb-row">
+                                                <div class="sppb-col-sm-12">
+                                                    <div class="sppb-section-title sppb-text-center">
+                                                        <h2 class="sppb-title-heading myt delay-10s animated wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                                                            About The Builder - <font style="color: #53ABBD"><?=$property->builder?></font></h2>
+                                                            <br>
+                                                        <div class="underline2" style="margin-bottom: 5px;">&nbsp;</div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="col-md-12"> 
+                                                                <p style="text-align: justify;" class="comment more">
+                                                                    <br>
+                                                                <?php
+                                                                echo str_replace($property->builder,"<b>".$property->builder."</b>",$property->builder_description);?>
+                                                            </p>
+                                                    <br/>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                
     <section id="section-id-1507611947" class="sppb-section resort-title-heading resort-location-wrapper resort-discount wow">
         <div class="overlay" style="padding-bottom: 50px;">
             <div class="sppb-row-container">
@@ -2244,33 +2274,7 @@ if($property->usp!='')
     </div>
     </div>
     </section>
-    <section id="section-id-1507611960" class="sppb-section   resort-discount wow">
-                                    <div class="overlay">
-                                        <div class="sppb-row-container">
-                                            <div class="sppb-row">
-                                                <div class="sppb-col-sm-12">
-                                                    <div class="sppb-section-title sppb-text-center">
-                                                        <h2 class="sppb-title-heading myt delay-10s animated wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                                                            About The Builder - <font style="color: #53ABBD"><?=$property->builder?></font></h2>
-                                                            <br>
-                                                        <div class="underline2" style="margin-bottom: 5px;">&nbsp;</div>
-                                                    </div>
 
-
-                                                </div>
-                                                <div class="col-md-12"> 
-                                                                <p style="text-align: justify;" class="comment more">
-                                                                    <br>
-                                                                <?php
-                                                                echo str_replace($property->builder,"<b>".$property->builder."</b>",$property->builder_description);?>
-                                                            </p>
-                                                    <br/>
-                                                    <br/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
     <?php $this->load->view('footer');?>
 
         <div class="offcanvas-menu wow">
