@@ -767,9 +767,9 @@
                 #contact-form .intl-tel-input .selected-flag .iti-arrow{
             border-top: 4px solid rgb(0, 0, 0) !important;
                 }
-         
             /*---------------------------*/
         </style>
+
         <?php 
             $builder  = $this->bm->getBuilderById('name,description', ['id'=>$property->builder_id]);
             $price_range ='';
@@ -824,8 +824,8 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "'.$property->title.' provides amenities like <b>gym, swimming pool, club house, children play area etc.</b>"}
-      },';
-  
+      },'; 
+      $faq =json_decode("[".rtrim($txt,",")."]");   
         foreach ($property->faq as $faq) {
             if(trim($faq->question)!=''){
             $txt .='{
@@ -2137,7 +2137,72 @@ if($property->usp!='')
                                         </div>
                                     </div>
                                 </section>
-                                
+                                         <div class="">
+                                                    <div class="sppb-section-title sppb-text-center">
+                                                        <h2 class="sppb-title-heading myt delay-10s animated wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                                                            Frequently Asked Questions</h2>
+                                                            <br>
+                                                        <div class="underline2" style="margin-bottom: 5px;">&nbsp;</div>
+                                                    </div>
+
+
+                                                </div>  
+<div class="sppb-row-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+ 
+ <div itemscope="" itemtype="https://schema.org/FAQPage">
+          <div class="panel-group" id="cf_faq_collapse" role="tablist" aria-multiselectable="true">
+ <?php
+ $count=1;
+     foreach ($faq as $faq) {    
+    ?>
+              <div class="panel panel-default " itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question">
+                <div itemprop="name" class="panel-heading" role="tab" id="heading<?=$count?>">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#cf_faq_collapse" href="#collapse<?=$count?>" aria-expanded="false" aria-controls="collapse<?=$count?>" class="collapsed">
+                      <?=$count?>.<?=$faq->name?></a>
+                  </h4>
+                </div>
+                <div id="collapse<?=$count?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?=$count?>" aria-expanded="false" style="height: 0px;">
+                  <div class="panel-body">
+ <div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer">
+                      <div itemprop="text">
+                        <p><?=$faq->acceptedAnswer->text?></p>
+</div>
+</div>
+                  </div>
+                </div>
+              </div>
+              <?php
+              $count++;
+                }
+    ?>
+
+          </div>  
+ 
+ </div>
+      </div>
+<!--  <div class="col-xs-4 col-sm-4">
+  <div class="faq_wrapper">
+<ul class="faq_list">
+<center><h4>Do you have any Questions?</h4>
+<h5>Our Project Manager will reply by Whatsapp (or) We will send you text message.</h5>
+</center>
+                    <div class="underline2" style="margin-bottom:20px">&nbsp;</div>
+<center>
+<form action="faq.php" name="main-popup" method="POST" novalidate">
+  <center><input type="tel" placeholder="Your Mobile Number*" name="telephone" style="margin-bottom:10px" required></center>  
+  <center> <input type="text" placeholder="Type Your Questions*" name="faq" id="faq" style="margin-bottom:10px" required></center>          
+                                       <button type="submit" class="btn btn-default price-btn">ASK US</button>
+</form>
+</center>
+</ul>
+<br/>
+</div>
+ </div> -->
+    </div>
+</div>                          
     <section id="section-id-1507611947" class="sppb-section resort-title-heading resort-location-wrapper resort-discount wow">
         <div class="overlay" style="padding-bottom: 50px;">
             <div class="sppb-row-container">
