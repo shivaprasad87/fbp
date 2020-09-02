@@ -58,6 +58,9 @@
                                      <option value="3" <?=$footer_link->priority == "3"?'selected':''?>>3rd position</option>
                                      <option value="4" <?=$footer_link->priority == "4"?'selected':''?>>4th position</option>
                                      <option value="5" <?=$footer_link->priority == "5"?'selected':''?>>5th position</option>
+                                     <option value="6" <?=$footer_link->priority == "6"?'selected':''?>>6th position</option>
+                                     <option value="7" <?=$footer_link->priority == "7"?'selected':''?>>7th position</option>
+                                     <option value="8" <?=$footer_link->priority == "8"?'selected':''?>>8th position</option>
 
                                 </select>
                             </div>

@@ -1726,7 +1726,7 @@
                            </div>
                            <div class="clearfix"></div>
                            <br>
-                           <div class="">
+                          <!--  <div class="">
                            <div class="sppb-section-title sppb-text-center">
                            <h2 class="sppb-title-heading myt delay-10s animated wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
                            Frequently Asked Questions</h2>
@@ -1768,7 +1768,7 @@
                            </div>
                            </div>
                            </div>
-                           </div> 
+                           </div>  -->
                            <div class="mainContentWidth container">
                            <div class="row">
                            <div class="col-md-12">
