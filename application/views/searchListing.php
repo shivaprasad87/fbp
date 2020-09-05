@@ -272,7 +272,7 @@
                             </div>
 							<div class="row">
 								<div class="col-sm-12 text-center">
-									<button class="btn btn-submit" type="submit"><img src="<?= base_url('assets/img/home.png') ?>"></button>
+									<button class="btn btn-submit" type="submit"><img src="<?= base_url('assets/img/home.png') ?>" alt="Full Basket Property"></button>
 								</div>
 							</div>
 						</form>
