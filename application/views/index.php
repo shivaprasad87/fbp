@@ -580,7 +580,7 @@ $i=0;
                         </div>
                         <div class="testi-img">
                             <img src="<?= base_url('uploads/testimonials/' . $testimonial->image) ?>"
-                                 class="img-responsive img-circle center-block">
+                                 class="img-responsive img-circle center-block" alt="Full Basket Property - Our Happy Customers">
                         </div>
                     </div>
                 <?php $i++;} ?>
