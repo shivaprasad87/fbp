@@ -716,7 +716,7 @@ $i=0;
             </div>
             <div class="modal-body">
                 <div class="text-center">
-                    <img src="" class="img-responsive ach_image" style="display: inline-block"/>
+                    <img src="" class="img-responsive ach_image" alt="Full Basket Property Achievements" style="display: inline-block"/>
                 </div>
                 <br/>
                 <div class="ach_comment"></div>
