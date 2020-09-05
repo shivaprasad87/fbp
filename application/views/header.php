@@ -62,7 +62,7 @@
     margin-left: 52px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 26px;"alt="fullbasketlogo" discription="Full Basket Logo image"></a>
+    border-radius: 26px;"alt="Full Basket Property Logo" discription="Full Basket Logo image"></a>
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-7">
                             <ul class="nav navbar-nav">
@@ -163,7 +163,7 @@
          <?php $name = $this->uri->segment(2);?>
         <div class="col-xs-9 col-sm-9 nopadding visible-xs">
                   <div class="col-xs-3 col-sm-3 col-md-1">
-                        <a href="<?= site_url() ?>"><img src="<?= base_url('assets/img/logo.png') ?>" style=" float: right; width: 70px;"alt="fullbasketlogo" discription="Full Basket Logo image"></a>
+                        <a href="<?= site_url() ?>"><img src="<?= base_url('assets/img/logo.png') ?>" style=" float: right; width: 70px;"alt="Full Basket Property Logo" discription="Full Basket Logo image"></a>
                     </div>
                     <div class="col-xs-9 col-sm-6 col-md-8"> 
                         <div class="city_select">

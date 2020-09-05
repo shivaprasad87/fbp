@@ -245,7 +245,7 @@ $(document).ready(function(){
            
         ?>
       <div class="<?= $desk ? 'item' : 'item active' ?>">
-      <img src="<?= base_url('uploads/sliders/' .  $slider->image) ?>" style="width: 100%!important;" alt="slider">
+      <img src="<?= base_url('uploads/sliders/' .  $slider->image) ?>" style="width: 100%!important;" alt="Full Basket Property Slider">
       </div>
        <?php $desk++;
         
@@ -276,7 +276,7 @@ $(document).ready(function(){
             <div class="logo_cont text-center">
                 <img style="display: inline-block;"
                      src="<?php echo base_url('assets/img/logo.png'); ?>"
-                     alt="fullbasket"/>
+                     alt="Full Basket Property Logo"/>
             </div>
             <div class="alert alert-danger" role="alert" id="error_message" style="display:none;">...</div>
             <div class="alert alert-success" role="alert" id="success_message" style="display:none;">...</div>
