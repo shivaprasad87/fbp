@@ -61,6 +61,8 @@
                                      <option value="6">6th position</option>
                                      <option value="7">7th position</option>
                                      <option value="8">8th position</option>
+                                     <option value="9">9th position</option>
+                                     <option value="10">10th position</option>
 
                                 </select>
                             </div>
