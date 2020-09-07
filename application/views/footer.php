@@ -33,7 +33,10 @@
 .social input.separate-dial-code .selected-dial-code {
    color: #1f1d1d !important;
 }
-
+h3, h4
+{
+    line-height:2.1 !important;
+}
 }
 </style>
 <div class="modal fade" id="submitContact">
@@ -512,7 +515,7 @@ for ($i=5; $i < 10 ; $i++) {
            
             <div class="col-md-3 col-sm-12">
                  <ul>
-                 <h4 style="font-size: 20px;">Properties In Mumbai</h4>
+                 <h4 style="font-size: 20px;">Locality - Mumbai</h4>
                    <?php
                    $data = $this->home_model->where_order_by(array('status' => 1,'line'=>4),array('priority'=>'asc'), 'property_type');
                 // foreach ($data as $data) {
