@@ -370,47 +370,96 @@
         <div class="row footer_property">
            <h3>Easy Links for your search</h3>
          
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-3 col-sm-12">
             
               <ul> 
-              <!-- <h4>Properties In Bangalore</h4> -->
+              <h4 style="font-size: 20px;">City</h4>
                 <?php
                 $data = $this->home_model->where_order_by(array('status' => 1,'line'=>1),array('priority'=>'asc'), 'property_type');
-                foreach ($data as $data) {
+                $i=1;
+                // foreach ($data as $data) {
 
-                    if($data['city']=='')
+                //     if($data['city']=='')
+                //                     {
+                // echo " <li>
+                //  <a href=".base_url('listing')."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                //                     }
+                //     else
+                //     {
+                //         echo " <li> <a href=".base_url('city/').$data['city']."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                //     }
+             
+                //              }
+                for ($i=0; $i < 5 ; $i++) { 
+                      if($data[$i]['city']=='')
                                     {
                 echo " <li>
-                 <a href=".base_url('listing')."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                                     }
                     else
                     {
-                        echo " <li> <a href=".base_url('city/').$data['city']."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                     }
-             
-                             }
+                }
 
                 ?>
               
                     
               </ul>
-            </div>
-
-            <div class="col-md-2 col-sm-12">
-             <ul>
-            <!--  <h4>Properties In Pune</h4> -->
-                 <?php
-                 $data = $this->home_model->where_order_by(array('status' => 1,'line'=>2),array('priority'=>'asc'), 'property_type');
-                foreach ($data as $data) {
-
-                    if($data['city']=='')
+              <ul> 
+              <h4 style="font-size: 20px;">Locality - Bangalore</h4>
+                <?php
+                 for ($i=5; $i < 10 ; $i++) { 
+                      if($data[$i]['city']=='')
                                     {
                 echo " <li>
-                 <a href=".base_url('listing')."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                                     }
                     else
                     {
-                        echo " <li> <a href=".base_url('city/').$data['city']."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                    }
+                }
+
+                ?>
+            </ul> 
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+             <ul>
+            <h4 style="font-size: 20px;">Top Builder In India</h4>
+                 <?php
+                 $data = $this->home_model->where_order_by(array('status' => 1,'line'=>2),array('priority'=>'asc'), 'property_type');
+                // foreach ($data as $data) {
+for ($i=0; $i < 5 ; $i++) { 
+                    if($data[$i]['city']=='')
+                                    {
+                echo " <li>
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                                    }
+                    else
+                    {
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                    }
+             
+                             }
+                
+                ?>
+             </ul>
+               <ul>
+            <h4 style="font-size: 20px;">Locality - Pune</h4>
+                 <?php
+                 $data = $this->home_model->where_order_by(array('status' => 1,'line'=>2),array('priority'=>'asc'), 'property_type');
+                // foreach ($data as $data) {
+for ($i=5; $i < 10 ; $i++) { 
+                    if($data[$i]['city']=='')
+                                    {
+                echo " <li>
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                                    }
+                    else
+                    {
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                     }
              
                              }
@@ -419,44 +468,85 @@
              </ul>
             </div>
             
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <ul>
-               <!--  <h4>Properties In Hyderabad</h4> -->
+                <h4 style="font-size: 20px;">Locality - Hyderabad</h4>
                    <?php
                    $data = $this->home_model->where_order_by(array('status' => 1,'line'=>3),array('priority'=>'asc'), 'property_type');
-                foreach ($data as $data) {
+                // foreach ($data as $data) {
+                   for ($i=0; $i < 5 ; $i++) { 
 
-                    if($data['city']=='')
+                    if($data[$i]['city']=='')
                                     {
                 echo " <li>
-                 <a href=".base_url('listing')."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                                     }
                     else
                     {
-                        echo " <li> <a href=".base_url('city/').$data['city']."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                     }
              
                              }
 
                 ?>
+                </ul>
+                <ul>
+                <h4 style="font-size: 20px;">Locality - Noida</h4>
+                <?php
+                  for ($i=5; $i < 10 ; $i++) { 
+
+                    if($data[$i]['city']=='')
+                                    {
+                echo " <li>
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                                    }
+                    else
+                    {
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                    }
+             
+                             }
+                             ?>
                 </ul>
             </div>
            
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                  <ul>
-               <!--   <h4>Properties In Noida</h4> -->
+                 <h4 style="font-size: 20px;">Properties In Mumbai</h4>
                    <?php
                    $data = $this->home_model->where_order_by(array('status' => 1,'line'=>4),array('priority'=>'asc'), 'property_type');
-                foreach ($data as $data) {
+                // foreach ($data as $data) {
+                   for ($i=0; $i < 5 ; $i++) { 
 
-                    if($data['city']=='')
+                    if($data[$i]['city']=='')
                                     {
                 echo " <li>
-                 <a href=".base_url('listing')."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                                     }
                     else
                     {
-                        echo " <li> <a href=".base_url('city/').$data['city']."?place=".$data['search_key']." target='_blank'>".$data['name']."</a></li>";
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                    }
+             
+                             }
+
+                ?>
+                </ul>
+                <ul>
+                 <h4 style="font-size: 20px;">Type</h4>
+                   <?php
+                   $data = $this->home_model->where_order_by(array('status' => 1,'line'=>4),array('priority'=>'asc'), 'property_type');
+                // foreach ($data as $data) {
+                   for ($i=5; $i < 10 ; $i++) { 
+
+                    if($data[$i]['city']=='')
+                                    {
+                echo " <li style='white-space: nowrap;'>
+                 <a href=".base_url('listing')."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
+                                    }
+                    else
+                    {
+                        echo " <li> <a href=".base_url('city/').$data[$i]['city']."?place=".$data[$i]['search_key']." target='_blank'>".$data[$i]['name']."</a></li>";
                     }
              
                              }
@@ -465,10 +555,9 @@
                 </ul>
             </div>
 
-            <div class="col-md-2 col-sm-12">
+            <!-- <div class="col-md-3 col-sm-12">
                  <ul>
-               <!--   <h4>Properties In Mumbai</h4> -->
-                   <?php
+                  <h4 style="font-size: 20px;">Properties In Mumbai</h4>                    <?php
                    $data = $this->home_model->where_order_by(array('status' => 1,'line'=>5),array('priority'=>'asc'), 'property_type');
                 foreach ($data as $data) {
 
@@ -488,13 +577,12 @@
                 </ul>
             </div>
             <div class="col-md-2 col-sm-12" style="    display: none;">
-                 <ul><!-- 
-                 <h4>Properties In India</h4> -->
+                 <ul>
                    <?php
 
                 ?>
                 </ul>
-            </div>
+            </div> -->
         </div>
        
     </div>
