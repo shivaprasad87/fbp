@@ -537,7 +537,18 @@ for ($i=5; $i < 10 ; $i++) {
                 </ul>
                 <ul>
                  <h4 style="font-size: 20px;">Type</h4>
-                   <?php
+                 
+                 <li style='white-space: nowrap;'>
+                 <a href="<?=base_url('listing')."?city=Bangalore&property_type=villas"?>" target='_blank'>Villas in Bangalore</a></li>
+                 <li style='white-space: nowrap;'>
+                 <a href="<?=base_url('listing')."?city=Bangalore&property_type=plots"?>" target='_blank'>Gated community plots In Bangalore</a></li>
+                 <li style='white-space: nowrap;'>
+                 <a href="<?=base_url('listing')."?city=Hyderabad&property_type=villas"?>" target='_blank'>Villas in Hyderbad</a></li>
+                 <li style='white-space: nowrap;'>
+                 <a href="<?=base_url('listing')."?city=Hyderabad&property_type=plots"?>" target='_blank'>Plotted development in Hyderabad</a></li>
+                 <li style='white-space: nowrap;'>
+                 <a href="<?=base_url('city/bangalore');?>" target='_blank'>Luxury projects In Bangalore</a></li>
+               <!--     <?php
                    $data = $this->home_model->where_order_by(array('status' => 1,'line'=>4),array('priority'=>'asc'), 'property_type');
                 // foreach ($data as $data) {
                    for ($i=5; $i < 10 ; $i++) { 
@@ -554,7 +565,7 @@ for ($i=5; $i < 10 ; $i++) {
              
                              }
 
-                ?>
+                ?> -->
                 </ul>
             </div>
 

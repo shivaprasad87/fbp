@@ -9,7 +9,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="<?= site_url('admin/FooterLinks/add') ?>" enctype="multipart/form-data">
+                <form class="form-horizontal" method="post" action="<?= site_url('admin/FooterLinks/add') ?>" enctype="multipart/form-data" autocomplete="off">
                     <div class="box-body">
                         
                         <div class="form-group">
@@ -20,22 +20,29 @@
                                 <span class="<?= form_error('name') ? 'text-danger' : '' ?>"><?= form_error('name') ?></span>
                             </div>
                         </div>
+                            <?php $cities = $this->properties_model->getWhere(array('status' => 1), 'cities');?>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">City</label>
+                            <div class="col-sm-10">
+                                            <select class="form-control" name="city" id="city">
+                                                <option selected="" value="">Select Your City</option>
+                                                <?php
+                                                   foreach ($cities as $city) { ?>
+                                                    <option value="<?= $city->id ?>" <?= $this->session->userdata('city') == $city->name ? 'selected' : '' ?>><?= $city->name ?></option>
+                                                <?php } ?>
+                                            </select>
+                                            </div>
+                                        </div>
                         <div class="form-group">
                             <label for="search_key" class="col-sm-2 control-label">Search Key</label>
 
                             <div class="col-sm-10 <?= form_error('search_key') ? 'has-error' : '' ?>">
-                                <input type="text" name="search_key" class="form-control" id="inputEmail3" placeholder="Type the search_key here" value="<?= set_value('search_key') ?>">
+                                <input type="text" name="search_key" class="form-control" id="text" placeholder="Type the search_key here" value="<?= set_value('search_key') ?>">
                                 <span class="<?= form_error('search_key') ? 'text-danger' : '' ?>"><?= form_error('search_key') ?></span>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="city_name" class="col-sm-2 control-label">City Name</label>
-
-                            <div class="col-sm-10 <?= form_error('city') ? 'has-error' : '' ?>">
-                                <input type="text" name="city" class="form-control" id="inputEmail3" placeholder="Type the scity here" value="<?= set_value('city') ?>">
-                                <span class="<?= form_error('city') ? 'text-danger' : '' ?>"><?= form_error('city') ?></span>
-                            </div>
-                        </div>
+                                          
+                       
                         <div class="form-group">
                             <label for="coloum" class="col-sm-2 control-label">coloum</label>
                              <div class="col-sm-10">
@@ -82,3 +89,34 @@
         </div>
     </div>
 </section>
+ <script>
+                      $(document).ready(function(){
+     $( "#text" ).autocomplete({
+        source: function( request, response ) {
+          // Fetch data
+          $.ajax({
+            url: '<?=base_url('home/get_locations_like');?>',
+            type: 'post',
+            dataType: "json",
+            data: {
+              Location: request.term
+            },
+            success: function( data ) {
+                response($.map(data, function (value, key) {
+                return {
+                    label: value.name, 
+                }
+            }));
+            }
+          });
+        },
+        select: function (event, ui) {
+          // Set selection
+          $('#text').val(ui.item.label); // display the selected text
+          //$('#userid').val(ui.item.value); // save selected id to input
+          return false;
+        }
+      });
+
+    });
+                    </script>

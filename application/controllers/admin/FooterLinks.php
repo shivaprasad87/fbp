@@ -90,8 +90,10 @@ class FooterLinks extends Admin_Controller {
         // setup page header data
         // $this->set_title(lang(' title add_property_footer_links'));
         $data = $this->includes;
+        
         // set content data
         $content_data = $this->data;
+
 
         $data['content'] = $this->load->view('admin/footerpropertylinks/add', $content_data, TRUE);
         $this->load->view($this->template, $data);

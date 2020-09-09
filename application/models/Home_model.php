@@ -361,6 +361,16 @@ class Home_model extends MY_Model {
         ->result();
         return  json_decode(json_encode($data[0]->id),true);
     }
+public function get_property_type_id($name)
+    {
+        $data = $this->db->select('id')
+        ->from('property_types')
+        ->where('name',$name)
+        ->where('status',1)
+        ->get()
+        ->result();
+        return  json_decode(json_encode($data[0]->id),true);
+    }
         public function get_location_id($name = null)
     {
         $data = $this->db->select('id')
@@ -384,6 +394,14 @@ class Home_model extends MY_Model {
                 ->join('property_flat_types pft', 'pft.property_id = p.id', 'LEFT');
                 $result = $this->db->get()->result();
          return $result;
+    }
+    public function locations_like($value='')
+    {
+        return $this->db->select('name')
+                        ->from('locations')
+                        ->like('name',$value)
+                        ->get()
+                        ->row();
     }
 
     

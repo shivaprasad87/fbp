@@ -92,7 +92,16 @@ class Home extends Public_Controller
         {
        $place = array("keyword"=>urldecode($this->input->get('place')));
         }
-       $content='';
+               $content='';
+        if($this->input->get('city')!='' && $this->input->get('property_type')!='')
+        {
+            $city_id =  $this->home_model->get_city_id($this->input->get('city'));
+            $property_type =  $this->home_model->get_property_type_id($this->input->get('property_type'));
+            // echo $city_id;die;
+       $place = array("city"=>$city_id,"property_type" =>urldecode($property_type));
+       // print_r($place);die;
+        }
+
         if(!empty($this->session->userdata('content')))
         {
        $content1 = $this->input->post();
@@ -128,11 +137,13 @@ class Home extends Public_Controller
         elseif (!empty($place)) {
              $total      = $this->home_model->loadProperties(0, 0, true, $place);
             $properties = $this->home_model->loadProperties($perpage, $page, false, $place);
+            //echo $this->db->last_query();die;
         }
         else {
             $total      = $this->home_model->loadProperties(0, 0, true, $content);
             $properties = $this->home_model->loadProperties($perpage, $page, false, $content);
         }
+        //echo $this->db->last_query();die;
         //print_r($content);
         // echo $content['price'];
         
@@ -1174,5 +1185,10 @@ redirect(base_url());
         $this->load->view('template', $this->data);
  
   }  
+      public function get_locations_like($location=''){ 
+        $locations = $this->home_model->locations_like($location);
+        echo json_encode($locations);
+  
+    }
 
 }
